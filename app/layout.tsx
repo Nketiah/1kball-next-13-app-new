@@ -1,7 +1,6 @@
 import AppNavigation from '@/components/AppNavigation'
 import { ReactNode } from 'react'
 import '@/app/globals.css' 
-import AuthState from './context/AuthContext'
 import { GameProvider  } from "../app/context/GameContext"
 
 

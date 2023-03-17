@@ -1,35 +1,52 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/app/result/result.module.css";
 import { getGameCat } from "@/app/lib/fetchData";
 import GameCat from "./GameCat";
 import axios from 'axios'
-import  { useGameCategory }  from "../app/context/GameContext"
+import  { useGame }  from "../app/context/GameContext"
 
 const GameButton = ({ gameNamesData }: { gameNamesData: GameName[] }) => {
 
-const { setGameCategory } = useGameCategory()
+const { setGameCategory } = useGame()
+const [activeButton, setActiveButton] = useState(0)
 
 
-const fetchSingleGameDate = async (url: any) => {
+
+const fetchSingleGameData = async (url: string, index: number )=> {
    const  {data} = await axios.get(url)
+   setGameCategory(data)
+
+
+   setActiveButton(index)
+   //getFirstData(firstUrl)
+}
+
+
+const getFirstData = async () => {
+  const  {data} = await axios.get("http://69.49.228.42/1kball/dev/api/v1/1kball5d")
    setGameCategory(data)
 }
 
 
+useEffect(()=> {
+
+//getFirstData()
+
+},[])
+
 
   return (
     <>
-      <div>{/* <GameCat gameCategoryData={data}/> */}</div>
       {gameNamesData &&
         gameNamesData.map((game, index) => (
           <>
               <button
                key={index}
-               onClick={()=> fetchSingleGameDate(game.game_url)}
+               onClick={()=> fetchSingleGameData(game.game_url, index)}
                 className={`${
-                  index === 0 ? styles.activeGame : styles.buttons
+                  index === activeButton ? styles.activeGame : styles.buttons
                 }`}
               >
                 {game.category_name}

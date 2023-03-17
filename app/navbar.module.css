@@ -95,3 +95,33 @@
    font-size: 12px;
   }
   
+  .apisItems {
+    display: flex !important;
+    flex-direction: column;
+    height: 270px;
+    max-height: 400px;
+    overflow-y: scroll;
+    /* background-color: #b30f0f; */
+    width: 100%;
+    position: absolute;
+    /* z-index: 3000; */
+    color: black;
+    /* background-color: rgb(19, 2, 2); */
+    padding-bottom: 15px;
+  }
+  
+  .isVisible{
+    visibility: visible;
+  }
+  .apiLink{
+    list-style: none;
+    display: flex;
+  }
+  .eachLink{
+    font-size: 20px;
+    padding: 0.4rem;
+    cursor: pointer;
+  }
+  .eachLink:hover{
+     text-decoration: underline;
+  }

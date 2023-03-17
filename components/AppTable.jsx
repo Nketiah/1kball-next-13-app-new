@@ -1,18 +1,23 @@
 "use client"
 
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTable,  usePagination } from "react-table";
 import styles from "../app/tableStyles.module.css";
 import{ ImArrowLeft, ImArrowRight } from "react-icons/im"
 import { MdArrowForwardIos } from "react-icons/md"
-
+import { useGame } from "../app/context/GameContext"
+import Spinner from "./Spinner"
 
 const AppTable = ({drawData, drawColumns}) => {
 
   const columns = useMemo(() => drawColumns, []);
-  const data = useMemo(() => drawData, [])
+  const data = useMemo(() => drawData, [drawData])
+
+  const { isLoading } = useGame()
 
   // 0551665102
+
+
 
   const {
     getTableProps,
@@ -37,7 +42,10 @@ const AppTable = ({drawData, drawColumns}) => {
 
   return (
     <>
-      <table {...getTableProps()} className={styles.table}>
+     {
+
+      isLoading ? <Spinner/> : ( 
+       <table {...getTableProps()} className={styles.table}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -62,6 +70,8 @@ const AppTable = ({drawData, drawColumns}) => {
           })}
         </tbody>
       </table>
+      )
+    }
       <div className={styles.pagination}>
         <span>
           Page{"  "}
@@ -91,7 +101,7 @@ const AppTable = ({drawData, drawColumns}) => {
         >
           {[10, 20, 30, 50].map((page, index) => (
             <option key={index} value={page} >
-              <span>Show</span> {page}
+              Show {page}
             </option>
           ))}
         </select>

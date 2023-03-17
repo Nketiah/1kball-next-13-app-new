@@ -1,12 +1,12 @@
 type GameName = {
-  catid: number;
-  category_name: string;
-  game_url: string;
+  catid: number
+  category_name: string
+  game_url: string
 };
 
 type CategoryData = {
-  id: number;
-  game_id: string;
+  id: number
+  game_id: string
   game_hash: string
   game_ip: string
   game_name: string
@@ -23,12 +23,26 @@ type CategoryData = {
   notify: string
   sessionId: string
   data_url: string
-};
-type GameName1 = {
-  draw_date: Date;
-  draw_time: Date;
-  draw_number: string;
-  date_created: Date;
+}
+
+type GameDraw = {
+  draw_date: Date
+  draw_time: Date
+  draw_number: string
+  date_created: Date
+  draw_count: number
 };
 
-type GameDraw = {};
+interface GameContextType {
+  gameNamesData: GameName[]
+  setGameNamesData: React.Dispatch<React.SetStateAction<GameName[]>>
+  gameCategory: CategoryData[]
+  setGameCategory: React.Dispatch<React.SetStateAction<CategoryData[]>>
+  gameDraws: GameDraw[]
+  setGameDraws: React.Dispatch<React.SetStateAction<GameDraw[]>>
+  isLoading: boolean
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  hidePage: boolean
+  setHidePage: React.Dispatch<React.SetStateAction<boolean>>
+}
+
