@@ -1,0 +1,21 @@
+.container{
+    margin-top: -5px;
+    background-color: #0B1A3D;
+    width: 100%;
+    text-align: center;
+    padding: 5rem 0;
+}
+.header{
+    color: white;
+}
+.drawItems{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.drawItems > h3{
+    color: white;
+}

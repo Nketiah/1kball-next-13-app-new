@@ -13,7 +13,6 @@ console.log(url)
    if(!response.ok) throw new Error("failed to fetch game category data")
 
    const data = response.json()
-   console.log("Hit ", data)
    return data
 }
 

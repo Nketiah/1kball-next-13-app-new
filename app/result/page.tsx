@@ -43,7 +43,6 @@ const getInitialData = async () => {
 }
 
 
-
   return (
     <>
       <main className={styles.main}>

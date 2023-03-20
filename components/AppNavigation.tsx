@@ -90,18 +90,19 @@ useEffect(()=> {
                   <Link href="about">About</Link>
                 </div> */}
                 <div className={styles.linkItem} >
-                  <Link href="/#" >
+                  <a href="#" >
                     <li onClick={()=> toggleApi()} className={styles.apiLink}>Api <BiDownArrow className={styles.navIcon} /></li>
                       <ul className={styles.apisItems} style={{ visibility: `${showApis ? 'visible' : 'hidden'}` }}>
                         {
                           data && data.map((game: any, index)=> (
                             <div key={index} style={{backgroundColor:"white", width:"30%", zIndex:"500px", paddingLeft:"8px"}}>
-                            <li onClick={(e)=> getEachData(game.data_url) } className={styles.eachLink}>{game.game_name}</li>
+                            {/* <li onClick={(e)=> getEachData(game.data_url) } className={styles.eachLink}>{game.game_name}</li> */}
+                             <Link href={`/draw/${game.data_url.split('/').pop()}`}>{game.game_name}</Link>
                           </div>
                           ))
                         }
                       </ul>
-                   </Link>
+                   </a>
                 </div>
               </div>
             </div>

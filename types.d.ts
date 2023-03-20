@@ -31,6 +31,7 @@ type GameDraw = {
   draw_number: string
   date_created: Date
   draw_count: number
+  get_time: Date
 };
 
 interface GameContextType {
