@@ -22,6 +22,7 @@ const page = async ({ params: {url} }: Params) => {
 const drawData: Promise<GameDraw[]> = getDrawNumbers(url)
 const data = await drawData as any
 
+
   return (
     <>
       <main className={styles.container}>
