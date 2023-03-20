@@ -1,10 +1,10 @@
-import { Inter } from 'next/font/google'
+//import { Inter } from 'next/font/google'
 import styles from '@/app/home.module.css'
 import Image from 'next/image'
 import { IoIosArrowForward } from "react-icons/io"
 import { VscWorkspaceTrusted } from "react-icons/vsc"
 
-const inter = Inter({ subsets: ['latin'] })
+//const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
