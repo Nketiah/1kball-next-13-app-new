@@ -1,5 +1,5 @@
 // "use client";
-export default {}
+
 // import React, { useMemo } from "react";
 // import {
 //   useTable,
