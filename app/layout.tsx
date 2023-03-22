@@ -15,7 +15,9 @@ export default function RootLayout({ children}: {children: ReactNode }) {
 
   return (
     <html lang="en">
-      <meta http-quiv='Content-Security-Policy' content='upgrade-insecure-requests' />
+     <head>
+     <meta http-quiv='Content-Security-Policy' content='upgrade-insecure-requests' />
+     </head>
       <body>
           <GameProvider>
             <AppNavigation/>
