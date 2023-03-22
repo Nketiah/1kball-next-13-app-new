@@ -25,7 +25,7 @@ const getApiData = async () => {
   const {data} = await axios.get("http://69.49.228.42/1kball/dev/")
   setData(data)
   //setGameCategory(data)
-}
+}   
 
 
 const getEachData = (url: string) => {
