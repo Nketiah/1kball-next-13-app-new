@@ -6,6 +6,9 @@ import { VscWorkspaceTrusted } from "react-icons/vsc"
 
 //const inter = Inter({ subsets: ['latin'] })
 
+
+export const dynamic = "force-dynamic"; // this is the fix
+
 export default function Home() {
 
   return (
