@@ -14,6 +14,7 @@ import GameButton from "@/components/GameButton";
 import { useGame } from "../context/GameContext";
 import GameCat from "@/components/GameCat";
 import axios from "axios";
+import {AppCalender} from "@/components/AppCalender"
 
 const Result = () => {
  
@@ -79,7 +80,11 @@ const getInitialData = async () => {
             <div className={styles.gameDraws} style={{ padding: "15px" }}>
               <div>
                 <div className={styles.drawsTableHeader}>
-                  <div className={styles.activeDate}>All Games</div>
+                  <div className={styles.datesWrapper}>
+                    
+                  </div>
+                  <AppCalender/>
+                  {/* <div className={styles.activeDate}>All Games</div>
                   <div className={styles.datesWrapper}>
                     <div>SUN</div> <div>26 FEB</div>{" "}
                   </div>
@@ -105,7 +110,7 @@ const getInitialData = async () => {
                   <div>
                     {" "}
                     <GoCalendar size={30} />{" "}
-                  </div>
+                  </div> */}
                 </div>
                 <AppTable drawColumns={DRAW_COLUMNS} drawData={gameDraws} />
               </div>
