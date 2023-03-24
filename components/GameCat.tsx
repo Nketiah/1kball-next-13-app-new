@@ -32,7 +32,7 @@ const GameCat = () => {
 
   useEffect(()=> {
       getFirstData()
-  },[gameDraws])
+  },[])
 
 
   return (
